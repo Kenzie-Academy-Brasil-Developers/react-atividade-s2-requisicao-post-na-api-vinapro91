@@ -17,6 +17,7 @@ function App() {
       .catch((err) => {
         console.log(err);
         setError(true);
+        setLogged(false);
       });
   };
   useEffect(() => {

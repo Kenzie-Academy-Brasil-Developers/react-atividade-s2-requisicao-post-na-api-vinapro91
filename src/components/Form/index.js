@@ -25,7 +25,11 @@ const Form = ({ setFormData, apiRequest }) => {
   return (
     <Container
       maxWidth="xs"
-      sx={{ border: "black solid 1px", height: "400px" }}
+      sx={{
+        border: "black solid 1px",
+        height: "400px",
+        backdropFilter: "blur( 4px )",
+      }}
       color="primary"
     >
       <Box
@@ -55,15 +59,22 @@ const Form = ({ setFormData, apiRequest }) => {
             {...register("password")}
           />
           <FormHelperText>{errors.password?.message}</FormHelperText>
-          <Button
-            color="secondary"
-            type="submit"
-            variant="contained"
-            fullWidth
-            sx={{ mt: 3, mb: 2 }}
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
           >
-            Login
-          </Button>
+            <Button
+              color="secondary"
+              type="submit"
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Login
+            </Button>
+          </Box>
         </Box>
       </Box>
     </Container>
